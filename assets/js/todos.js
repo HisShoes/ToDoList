@@ -28,9 +28,16 @@ function createListeners() {
 			var ToDoText = $(this).val();
 			$(this).val("");
 
-			$('ul').append("<li><span>X</span> " +  ToDoText + "</li>");
+			$('ul').append("<li><span><i class='fa fa-trash'></i></span> " +  ToDoText + "</li>");
 		}
 	});
+
+	//slide toggle for a list (Should be present on 'top level' items)
+	$(".fa-plus").click(function(){
+		$("ul").slideToggle();
+	});
+
+
 }
 
 init();
