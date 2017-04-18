@@ -13,7 +13,7 @@ function createListeners() {
 			var ToDoText = $(this).val();
 			$(this).val("");
 
-			$(this).parent().parent().append("<div class='list outlined'><h2>"+ ToDoText + " <i class='fa fa-plus' aria-hidden='true'></i></i></h2><ul><li><input class='sub' type='text' name='' maxlength='20' placeholder='Add New Todo'></li></ul></div>");
+			$(this).parent().parent().append("<div class='list outlined'><h2>"+ ToDoText + " <i class='fa fa-caret-down' aria-hidden='true'></i><i class='delete fa fa-trash fa-inverse'></i></h2><ul><li><input class='sub' type='text' name='' maxlength='20' placeholder='Add New Todo'></li></ul></div>");
 			reset();
 		}
 	});
@@ -45,7 +45,7 @@ function dynamicListeners() {
 	});
 
 	//slide toggle for a list (Should be present on 'top level' items)
-	$("h2").on('click', ".fa-plus", function(event){
+	$("h2").on('click', ".fa-caret-down", function(event){
 		$(this).parent().parent().find('ul').slideToggle();
 		event.stopPropagation();
 	});
@@ -66,6 +66,19 @@ function dynamicListeners() {
 		});
 		event.stopPropagation();
 	});
+
+	//click on the delete class to delete the todo category
+
+	//TODO -- ON CLICK SHOW ACCEPT/DECLINE, HIDE TRASH
+	$('.delete').on('click', function(event) {
+		$(this).parent().parent().slideUp(300, function() {
+			$(this).remove();
+		});
+		event.stopPropagation();
+	});
+
+	//TODO -- ON MOUSE OUT HIDE ACCEPT/DECLINE SHOW TRASH
+
 }
 
 //unbind then recreate listeners
