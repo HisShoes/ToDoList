@@ -62,7 +62,7 @@ input.sub:focus {
 	outline:none;
 }
 
-li:hover span{
+li:hover span, h2:hover span{
 	width:40px;
 	opacity:1.0;
 }
@@ -71,12 +71,16 @@ li:nth-child(2n) {
 	background: #f7f7f7;
 }
 
-.completed {
+li.completed {
 	color:grey;
+}
+
+.completed {
 	text-decoration: line-through;
 }
 
-.fa-plus {
+.fa-plus, .fa-arrows-v, .fa-times {
+	padding-left: 10px;
 	float:right;
 }
 
