@@ -16,25 +16,12 @@ h1, h2 {
 h1 {
 	background: rgba(41,128,185,0.2);
 	font-size: 24px;
-	text-transform: uppercase;
 }
 
 h2 {
 	background: rgba(41,128,185,0.2);
 	font-size: 18px;
 	text-transform: capitalize;
-}
-
-span {
-	background: #e74c3c;
-	height:40px;
-	margin-right: 20px;
-	text-align:center;
-	color: white;
-	width:0px;
-	display:inline-block;
-	transition: 0.2s linear;
-	opacity:0;
 }
 
 ul {
@@ -62,7 +49,7 @@ input.sub:focus {
 	outline:none;
 }
 
-li:hover span, h2:hover span{
+li:hover span {
 	width:40px;
 	opacity:1.0;
 }
@@ -73,6 +60,34 @@ li:nth-child(2n) {
 
 .delete {
 	float: right;
+	padding-right: 10px;
+}
+
+.trash {
+	background: #FF0066;
+	height:40px;
+	margin-right: 20px;
+	text-align:center;
+	color: white;
+	width:0px;
+	display:inline-block;
+	transition: 0.2s linear;
+	-moz-transition: 0.22s linear;
+    -webkit-transition: 0.22s linear;
+	opacity:0;
+}
+
+.confirm-del, .decline-del {
+	display:none;
+	float: right;
+}
+
+.confirm-del {
+	color: #66FF00;
+}
+
+.decline-del {
+	color: #FF0066;
 }
 
 li.completed {
@@ -83,8 +98,8 @@ li.completed {
 	text-decoration: line-through;
 }
 
-.fa-plus, .fa-arrows-v, .fa-times {
-	padding-left: 10px;
+.fa-plus, .fa-arrows-v, .fa-times, .fa-check, .fa-pencil-square-o {
+	padding-right: 10px;
 	float:right;
 }
 
@@ -118,8 +133,15 @@ li.completed {
 	background-color: rgba(0,0,0,0);
 }
 
+.fa-caret-down {
+    -moz-transition: 0.4s linear;
+    -webkit-transition: 0.4s linear;
+    transition: 0.4s linear;
+}
+
 #container {
 	margin: 100px auto;
 	background: rgba(0,0,0,0);
-	width: 360px;
+	min-width: 360px;
+	width: 30%;
 }
